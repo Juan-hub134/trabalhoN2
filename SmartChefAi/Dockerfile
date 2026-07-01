@@ -1,10 +1,10 @@
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk-slim
 
-# Copia o arquivo JAR gerado no build para o container
+# Copia o JAR gerado para o container
 COPY target/seu-arquivo.jar app.jar
 
-# Expõe a porta que o Spring Boot usa
+# Expõe a porta do Spring Boot
 EXPOSE 8080
 
-# Comando para rodar a aplicação
+# Comando para rodar o JAR
 ENTRYPOINT ["java", "-jar", "/app.jar"]
