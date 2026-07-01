@@ -1,0 +1,792 @@
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartChef AI — Receitas inteligentes com o que você tem</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Space Grotesk (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <!-- ════════════════════════════════
+       NAVBAR
+  ════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+ 
+      <!-- Logo -->
+      <a href="#inicio" class="navbar__logo">
+        <span class="logo__icon" aria-hidden="true">🍳</span>
+        <span class="logo__wordmark">SmartChef <span class="logo__accent">AI</span></span>
+      </a>
+ 
+      <!-- Nav links -->
+      <nav class="navbar__links" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#contato">Contato</a>
+      </nav>
+ 
+      <!-- CTA -->
+      <a href="#demo" class="btn btn--primary navbar__cta">Experimentar</a>
+ 
+      <!-- Hamburger (mobile) -->
+      <button class="navbar__hamburger" aria-label="Abrir menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+ 
+    <!-- Mobile menu -->
+    <nav class="navbar__mobile" id="mobileMenu" aria-label="Menu mobile">
+      <a href="#inicio">Início</a>
+      <a href="#funcionalidades">Funcionalidades</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+      <a href="#demo" class="btn btn--primary">Experimentar</a>
+    </nav>
+  </header>
+ 
+ 
+  <!-- ════════════════════════════════
+       HERO
+  ════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="container hero__inner">
+ 
+      <!-- Left column -->
+      <div class="hero__content">
+        <span class="hero__badge">✦ Powered by Artificial Intelligence</span>
+        <h1 class="hero__title">
+          Transforme ingredientes em receitas incríveis com
+          <span class="text--gradient">Inteligência Artificial</span>
+        </h1>
+        <p class="hero__subtitle">
+          Diga o que tem na geladeira. O SmartChef AI analisa seus ingredientes e sugere receitas deliciosas, nutritivas e sob medida para você — em segundos.
+        </p>
+ 
+        <!-- Ingredient input mockup -->
+        <div class="hero__input-group">
+          <div class="input-pill">
+            <span class="input-pill__icon">🥕</span>
+            <input
+              type="text"
+              placeholder="Ex: arroz, ovo, tomate, cebola..."
+              class="input-pill__field"
+              id="heroIngredients"
+              aria-label="Digite seus ingredientes"
+            />
+          </div>
+          <button class="btn btn--primary btn--lg" id="heroGenerate">
+            <span>Gerar Receita</span>
+            <span class="btn__icon" aria-hidden="true">→</span>
+          </button>
+        </div>
+ 
+        <p class="hero__hint">
+          Popular hoje: <span class="tag">Arroz de Forno</span> <span class="tag">Omelete Gourmet</span> <span class="tag">Shakshuka</span>
+        </p>
+      </div>
+ 
+      <!-- Right column — illustration -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__card hero__card--main">
+          <div class="hero__card-header">
+            <span class="hero__card-dot hero__card-dot--green"></span>
+            <span class="hero__card-dot hero__card-dot--orange"></span>
+            <span class="hero__card-title">SmartChef AI · Sugestão</span>
+          </div>
+          <div class="hero__card-body">
+            <div class="ai-bubble ai-bubble--user">
+              🥚 Ovo  🍅 Tomate  🧅 Cebola
+            </div>
+            <div class="ai-bubble ai-bubble--ai">
+              <span class="ai-bubble__label">SmartChef AI</span>
+              Com esses ingredientes sugiro uma <strong>Shakshuka</strong> — ovos pochados em molho de tomate temperado. Pronta em 20 min e cheia de proteína! 🍳
+            </div>
+            <div class="ai-bubble ai-bubble--ai">
+              <span class="ai-bubble__label">Outra opção</span>
+              <strong>Omelete de Tomate com Ervas</strong> — simples, rápida e nutritiva. ✨
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Floating stat cards -->
+        <div class="hero__stat hero__stat--1">
+          <span class="hero__stat-num">12k+</span>
+          <span class="hero__stat-label">Receitas na base</span>
+        </div>
+        <div class="hero__stat hero__stat--2">
+          <span class="hero__stat-num">98%</span>
+          <span class="hero__stat-label">Satisfação dos usuários</span>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- Decorative blobs -->
+    <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       LOGOS / SOCIAL PROOF
+  ════════════════════════════════ -->
+  <section class="social-proof">
+    <div class="container">
+      <p class="social-proof__label">Presente nos melhores portais de tecnologia</p>
+      <div class="social-proof__logos">
+        <span>TechCrunch</span>
+        <span>Product Hunt</span>
+        <span>Startup Brasil</span>
+        <span>G1 Tecnologia</span>
+        <span>Canaltech</span>
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       FUNCIONALIDADES
+  ════════════════════════════════ -->
+  <section class="features" id="funcionalidades">
+    <div class="container">
+ 
+      <div class="section-header">
+        <span class="section-eyebrow">Funcionalidades</span>
+        <h2 class="section-title">Tudo que você precisa para cozinhar melhor</h2>
+        <p class="section-sub">Seis pilares que tornam o SmartChef AI diferente de qualquer livro de receitas.</p>
+      </div>
+ 
+      <div class="features__grid">
+ 
+        <article class="feature-card">
+          <div class="feature-card__icon feature-card__icon--green">🤖</div>
+          <h3>Sugestão Inteligente de Receitas</h3>
+          <p>Nossa IA analisa seus ingredientes e combina com milhares de receitas para entregar as melhores opções no tempo que você tem disponível.</p>
+        </article>
+ 
+        <article class="feature-card feature-card--accent">
+          <div class="feature-card__icon feature-card__icon--orange">♻️</div>
+          <h3>Redução de Desperdício de Alimentos</h3>
+          <p>Aproveite ao máximo o que está na sua geladeira antes de estragar. O sistema prioriza ingredientes próximos do vencimento.</p>
+        </article>
+ 
+        <article class="feature-card">
+          <div class="feature-card__icon feature-card__icon--green">🎯</div>
+          <h3>Receitas Personalizadas</h3>
+          <p>Perfil alimentar, restrições, preferências e metas de saúde alimentam o modelo para receitas verdadeiramente suas.</p>
+        </article>
+ 
+        <article class="feature-card">
+          <div class="feature-card__icon feature-card__icon--orange">📅</div>
+          <h3>Planejamento de Refeições</h3>
+          <p>Monte cardápios semanais automáticos e receba listas de compras otimizadas baseadas nas suas receitas favoritas.</p>
+        </article>
+ 
+        <article class="feature-card">
+          <div class="feature-card__icon feature-card__icon--green">🥗</div>
+          <h3>Recomendações Nutricionais</h3>
+          <p>Calorias, macros e micronutrientes calculados para cada receita, com sugestões de ajustes para suas metas.</p>
+        </article>
+ 
+        <article class="feature-card">
+          <div class="feature-card__icon feature-card__icon--orange">💰</div>
+          <h3>Economia Doméstica</h3>
+          <p>Menos desperdício e compras mais inteligentes resultam em até 35% de economia no seu orçamento alimentar mensal.</p>
+        </article>
+ 
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       COMO FUNCIONA
+  ════════════════════════════════ -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+ 
+      <div class="section-header">
+        <span class="section-eyebrow">Como Funciona</span>
+        <h2 class="section-title">De ingredientes a receitas em 3 passos</h2>
+        <p class="section-sub">Simples como mandar uma mensagem para um chef pessoal.</p>
+      </div>
+ 
+      <div class="steps">
+ 
+        <div class="step">
+          <div class="step__number">01</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__content">
+            <div class="step__icon">📦</div>
+            <h3>Informe seus ingredientes</h3>
+            <p>Digite ou fale o que você tem em casa. O SmartChef entende linguagem natural — sem formulários complicados.</p>
+          </div>
+        </div>
+ 
+        <div class="step">
+          <div class="step__number">02</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__content">
+            <div class="step__icon">⚡</div>
+            <h3>A IA analisa e combina</h3>
+            <p>Nosso modelo processa seus ingredientes, histórico de preferências e dados nutricionais em milissegundos.</p>
+          </div>
+        </div>
+ 
+        <div class="step">
+          <div class="step__number">03</div>
+          <div class="step__content">
+            <div class="step__icon">🍽️</div>
+            <h3>Receba receitas personalizadas</h3>
+            <p>Sugestões ranqueadas por relevância, tempo de preparo e valor nutricional — com modo passo a passo interativo.</p>
+          </div>
+        </div>
+ 
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       DEMO — Simulação do produto
+  ════════════════════════════════ -->
+  <section class="demo" id="demo">
+    <div class="container">
+ 
+      <div class="section-header">
+        <span class="section-eyebrow">Simulação do Produto</span>
+        <h2 class="section-title">Veja o SmartChef AI em ação</h2>
+        <p class="section-sub">Painel real tal como você encontrará na plataforma.</p>
+      </div>
+ 
+      <div class="demo__shell">
+ 
+        <!-- Sidebar: ingredientes -->
+        <aside class="demo__sidebar">
+          <div class="demo__sidebar-header">
+            <span class="demo__sidebar-title">Minha Despensa</span>
+            <button class="demo__add-btn" aria-label="Adicionar ingrediente">+</button>
+          </div>
+          <ul class="demo__ingredients" role="list">
+            <li class="demo__ingredient demo__ingredient--active">
+              <span class="demo__ingredient-icon">🌾</span> Arroz
+              <span class="demo__ingredient-badge">500g</span>
+            </li>
+            <li class="demo__ingredient">
+              <span class="demo__ingredient-icon">🥚</span> Ovo
+              <span class="demo__ingredient-badge">6 un</span>
+            </li>
+            <li class="demo__ingredient demo__ingredient--expiring">
+              <span class="demo__ingredient-icon">🍅</span> Tomate
+              <span class="demo__ingredient-badge warn">vence hoje</span>
+            </li>
+            <li class="demo__ingredient">
+              <span class="demo__ingredient-icon">🧅</span> Cebola
+              <span class="demo__ingredient-badge">3 un</span>
+            </li>
+            <li class="demo__ingredient">
+              <span class="demo__ingredient-icon">🧄</span> Alho
+              <span class="demo__ingredient-badge">1 cabeça</span>
+            </li>
+          </ul>
+          <div class="demo__stats">
+            <div class="demo__stat-item">
+              <span>Ingredientes</span><strong>5</strong>
+            </div>
+            <div class="demo__stat-item">
+              <span>Receitas possíveis</span><strong class="text--green">38</strong>
+            </div>
+          </div>
+        </aside>
+ 
+        <!-- Chat -->
+        <main class="demo__chat" aria-label="Chat SmartChef AI">
+          <div class="demo__chat-header">
+            <span class="demo__online-dot" aria-hidden="true"></span>
+            <strong>SmartChef AI</strong>
+            <span class="demo__chat-sub">Gemini via LangChain4j · Spring Boot API</span>
+          </div>
+ 
+          <!-- As mensagens são injetadas aqui pelo JavaScript -->
+          <div class="demo__messages" id="chatMessages">
+ 
+            <!-- Mensagem de boas-vindas (estática) -->
+            <div class="msg msg--ai">
+              <div class="msg__avatar" aria-hidden="true">🍳</div>
+              <div class="msg__content">
+                <div class="msg__bubble">
+                  Olá! 👋 Sou o <strong>SmartChef AI</strong>. Diga quais ingredientes você tem em casa e vou sugerir receitas deliciosas para você!
+                </div>
+                <div class="msg__meta">SmartChef AI · agora</div>
+              </div>
+            </div>
+ 
+          </div>
+ 
+          <!-- Input bar -->
+          <div class="demo__input-bar">
+            <input
+              type="text"
+              placeholder="Ex: frango, batata, alho, limão..."
+              class="demo__input"
+              id="chatInput"
+              aria-label="Mensagem para o SmartChef AI"
+            />
+            <button class="demo__send-btn" id="chatSend" aria-label="Enviar mensagem">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+        </main>
+ 
+      </div>
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       BENEFÍCIOS
+  ════════════════════════════════ -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+ 
+      <div class="section-header">
+        <span class="section-eyebrow">Benefícios</span>
+        <h2 class="section-title">Por que escolher o SmartChef AI?</h2>
+      </div>
+ 
+      <div class="benefits__grid">
+ 
+        <div class="benefit-card">
+          <div class="benefit-card__icon">♻️</div>
+          <h3>Menos desperdício</h3>
+          <p>Reduza em até <strong>60%</strong> o desperdício de alimentos ao aproveitar tudo que tem em casa.</p>
+        </div>
+ 
+        <div class="benefit-card">
+          <div class="benefit-card__icon">⚡</div>
+          <h3>Mais praticidade</h3>
+          <p>Receitas sugeridas em segundos. Sem pesquisar, sem folhear livros.</p>
+        </div>
+ 
+        <div class="benefit-card">
+          <div class="benefit-card__icon">💰</div>
+          <h3>Economia de dinheiro</h3>
+          <p>Compras mais inteligentes e menos desperdício geram economia real no orçamento familiar.</p>
+        </div>
+ 
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🥗</div>
+          <h3>Alimentação personalizada</h3>
+          <p>Receitas adaptadas às suas restrições, metas e preferências pessoais.</p>
+        </div>
+ 
+        <div class="benefit-card">
+          <div class="benefit-card__icon">✨</div>
+          <h3>Receitas criativas</h3>
+          <p>Saia da mesmice. Descubra combinações surpreendentes com ingredientes simples do dia a dia.</p>
+        </div>
+ 
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       SOBRE
+  ════════════════════════════════ -->
+  <section class="about">
+    <div class="container about__inner">
+ 
+      <div class="about__text">
+        <span class="section-eyebrow">Sobre o SmartChef AI</span>
+        <h2 class="section-title">Tecnologia de ponta a serviço da sua cozinha</h2>
+        <p>O SmartChef AI nasceu da crença de que a Inteligência Artificial deve tornar a vida cotidiana mais simples, sustentável e saborosa. Nossa plataforma combina modelos de linguagem de última geração com uma base de dados de mais de 12.000 receitas curadas por nutricionistas e chefs profissionais.</p>
+        <p>Utilizando técnicas avançadas de Machine Learning e processamento de linguagem natural, o SmartChef entende contextos reais: ingredientes incompletos, substituições, restrições alimentares e até o tempo que você tem disponível para cozinhar.</p>
+        <ul class="about__list">
+          <li>✦ Modelo de IA fine-tuned para gastronomia</li>
+          <li>✦ Base com 12.000+ receitas validadas</li>
+          <li>✦ API REST pronta para integrações</li>
+          <li>✦ LGPD compliant — seus dados são seus</li>
+        </ul>
+        <a href="#demo" class="btn btn--primary">Testar agora gratuitamente</a>
+      </div>
+ 
+      <div class="about__visual" aria-hidden="true">
+        <div class="about__tech-card">
+          <div class="tech-stack">
+            <div class="tech-badge tech-badge--green">LLM</div>
+            <div class="tech-badge tech-badge--dark">NLP</div>
+            <div class="tech-badge tech-badge--green">ML Pipeline</div>
+            <div class="tech-badge tech-badge--orange">Spring Boot</div>
+            <div class="tech-badge tech-badge--dark">Vector DB</div>
+            <div class="tech-badge tech-badge--green">RAG</div>
+          </div>
+          <div class="about__metrics">
+            <div class="about__metric">
+              <span class="about__metric-num">12k+</span>
+              <span class="about__metric-label">Receitas</span>
+            </div>
+            <div class="about__metric">
+              <span class="about__metric-num">&lt;2s</span>
+              <span class="about__metric-label">Tempo médio</span>
+            </div>
+            <div class="about__metric">
+              <span class="about__metric-num">99.9%</span>
+              <span class="about__metric-label">Uptime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       CONTATO / CTA FINAL
+  ════════════════════════════════ -->
+  <section class="cta-section" id="contato">
+    <div class="container cta-section__inner">
+      <h2>Pronto para transformar sua cozinha?</h2>
+      <p>Comece grátis hoje. Sem cartão de crédito necessário.</p>
+      <div class="cta-section__actions">
+        <a href="#demo" class="btn btn--primary btn--lg">Experimentar gratuitamente</a>
+        <a href="mailto:contato@smartchefai.com.br" class="btn btn--ghost btn--lg">Falar com a equipe</a>
+      </div>
+      <p class="cta-section__contact-info">
+        📧 <a href="mailto:contato@smartchefai.com.br">contato@smartchefai.com.br</a>
+        📍 Porto Velho, RO · Brasil
+      </p>
+    </div>
+  </section>
+ 
+ 
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+ 
+      <div class="footer__brand">
+        <a href="#inicio" class="navbar__logo">
+          <span class="logo__icon" aria-hidden="true">🍳</span>
+          <span class="logo__wordmark">SmartChef <span class="logo__accent">AI</span></span>
+        </a>
+        <p class="footer__brand-desc">Inteligência artificial a serviço de uma culinária mais criativa, saudável e sustentável.</p>
+        <!-- Social icons -->
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram" class="footer__social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="footer__social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="footer__social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="#" aria-label="Twitter / X" class="footer__social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+        </div>
+      </div>
+ 
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Plataforma</h4>
+          <a href="#funcionalidades">Funcionalidades</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#demo">Demo</a>
+          <a href="#">Preços</a>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <a href="#">Sobre nós</a>
+          <a href="#">Blog</a>
+          <a href="#">Carreiras</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="#">Termos de uso</a>
+          <a href="#">Política de privacidade</a>
+          <a href="#">LGPD</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="footer__bottom">
+      <p>© 2025 SmartChef AI. Todos os direitos reservados. Feito com ❤️ no Brasil.</p>
+    </div>
+  </footer>
+ 
+  <!-- ════════════════════════════════
+       JAVASCRIPT — Integração real com
+       Spring Boot /api/assistant (POST)
+       Modelo: Gemini via LangChain4j
+  ════════════════════════════════ -->
+  <script>
+    /* ── CONFIG ────────────────────────────────────────
+       Altere API_URL para o endereço do seu backend.
+       Em desenvolvimento local o Spring Boot sobe em
+       http://localhost:8080 por padrão.
+    ─────────────────────────────────────────────────── */
+    const API_URL = 'http://localhost:8080/api/assistant';
+ 
+    /* ── NAVBAR SCROLL SHADOW ───────────────────────── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('navbar--scrolled', window.scrollY > 20);
+    });
+ 
+    /* ── HAMBURGER MOBILE ───────────────────────────── */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('navbar__mobile--open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('navbar__mobile--open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+ 
+    /* ── BOTÃO HERO → rola até o chat ──────────────── */
+    document.getElementById('heroGenerate')?.addEventListener('click', () => {
+      const val = document.getElementById('heroIngredients').value.trim();
+      document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+      /* Se o usuário digitou ingredientes no hero, preenche o chat automaticamente */
+      if (val) {
+        const chatInput = document.getElementById('chatInput');
+        chatInput.value = val;
+        /* Foca o campo para o usuário confirmar ou enviar */
+        setTimeout(() => chatInput.focus(), 600);
+      }
+    });
+ 
+    /* ══════════════════════════════════════════════════
+       CHAT ENGINE
+    ══════════════════════════════════════════════════ */
+ 
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput    = document.getElementById('chatInput');
+    const chatSend     = document.getElementById('chatSend');
+ 
+    /* ── Formata timestamp ──────────────────────────── */
+    function now() {
+      return new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    }
+ 
+    /* ── Scroll automático para o fim do chat ───────── */
+    function scrollToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+ 
+    /* ── Renderiza mensagem do usuário ──────────────── */
+    function appendUserMessage(text) {
+      const div = document.createElement('div');
+      div.className = 'msg msg--user';
+      div.innerHTML = `
+        <div>
+          <div class="msg__bubble">${escapeHtml(text)}</div>
+          <div class="msg__meta">Você · ${now()}</div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+ 
+    /* ── Renderiza resposta da IA ───────────────────── */
+    function appendAiMessage(rawText) {
+      const div = document.createElement('div');
+      div.className = 'msg msg--ai';
+      div.innerHTML = `
+        <div class="msg__avatar" aria-hidden="true">🍳</div>
+        <div class="msg__content">
+          <div class="msg__bubble">${formatAiResponse(rawText)}</div>
+          <div class="msg__meta">SmartChef AI · ${now()}</div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+ 
+    /* ── Indicador de "digitando..." ────────────────── */
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'msg msg--ai';
+      div.id = 'typingIndicator';
+      div.innerHTML = `
+        <div class="msg__avatar" aria-hidden="true">🍳</div>
+        <div class="msg__content">
+          <div class="msg__bubble typing-dots">
+            <span></span><span></span><span></span>
+          </div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+    function hideTyping() {
+      document.getElementById('typingIndicator')?.remove();
+    }
+ 
+    /* ── Mensagem de erro inline ─────────────────────── */
+    function appendErrorMessage(msg) {
+      const div = document.createElement('div');
+      div.className = 'msg msg--ai';
+      div.innerHTML = `
+        <div class="msg__avatar" aria-hidden="true">⚠️</div>
+        <div class="msg__content">
+          <div class="msg__bubble msg__bubble--error">${escapeHtml(msg)}</div>
+          <div class="msg__meta">SmartChef AI · ${now()}</div>
+        </div>`;
+      chatMessages.appendChild(div);
+      scrollToBottom();
+    }
+ 
+    /* ── Escapa HTML para evitar XSS ────────────────── */
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+ 
+    /* ── Formata a resposta da IA em HTML legível ───────
+       O SystemMessage do AssistenteService define um
+       formato com seções: Receita / Tempo / Dificuldade /
+       Ingredientes / Modo de preparo / Dica do Chef.
+       Esta função converte esse texto estruturado em HTML.
+    ─────────────────────────────────────────────────── */
+    function formatAiResponse(text) {
+      let html = escapeHtml(text);
+ 
+      /* Negrito em **texto** ou *texto* */
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+ 
+      /* Seções principais → título destacado */
+      const sections = [
+        'Receita:', 'Tempo:', 'Dificuldade:',
+        'Ingredientes:', 'Modo de preparo:', 'Dica do Chef:'
+      ];
+      sections.forEach(sec => {
+        const escaped = sec.replace(':', '');
+        html = html.replace(
+          new RegExp(`(${sec})`, 'gi'),
+          `<span class="ai-section-label">$1</span>`
+        );
+      });
+ 
+      /* Listas: linhas começando com "- " ou "N. " */
+      const lines = html.split('\n');
+      const result = [];
+      let inList = false;
+ 
+      lines.forEach(line => {
+        const trimmed = line.trim();
+        const isBullet  = /^[-•]\s/.test(trimmed);
+        const isOrdered = /^\d+\.\s/.test(trimmed);
+ 
+        if (isBullet || isOrdered) {
+          if (!inList) { result.push('<ul class="ai-list">'); inList = true; }
+          const content = trimmed.replace(/^[-•]\s/, '').replace(/^\d+\.\s/, '');
+          result.push(`<li>${content}</li>`);
+        } else {
+          if (inList) { result.push('</ul>'); inList = false; }
+          if (trimmed === '') {
+            result.push('<br>');
+          } else {
+            result.push(`<p>${trimmed}</p>`);
+          }
+        }
+      });
+      if (inList) result.push('</ul>');
+ 
+      return result.join('');
+    }
+ 
+    /* ── Função principal: envia ao Spring Boot ─────────
+       POST /api/assistant
+       Body: texto puro (String) — exatamente como o
+       @RequestBody String ingredientes espera.
+    ─────────────────────────────────────────────────── */
+    async function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+ 
+      /* Desabilita input enquanto aguarda */
+      chatInput.value = '';
+      chatInput.disabled = true;
+      chatSend.disabled  = true;
+ 
+      appendUserMessage(text);
+      showTyping();
+ 
+      try {
+        const response = await fetch(API_URL, {
+          method : 'POST',
+          headers: {
+            /*
+              O Spring Boot recebe @RequestBody String,
+              portanto o Content-Type deve ser text/plain.
+              Se você mudar para um DTO (@RequestBody IngredientesDTO),
+              troque para 'application/json' e ajuste o body.
+            */
+            'Content-Type': 'text/plain;charset=UTF-8'
+          },
+          body: text
+        });
+ 
+        if (!response.ok) {
+          throw new Error(`Erro ${response.status}: ${response.statusText}`);
+        }
+ 
+        const aiText = await response.text();
+        hideTyping();
+        appendAiMessage(aiText);
+ 
+      } catch (err) {
+        hideTyping();
+        console.error('[SmartChef AI] Erro na requisição:', err);
+ 
+        /* Mensagem amigável de erro */
+        if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+          appendErrorMessage(
+            'Não consegui conectar ao servidor. Verifique se o Spring Boot está rodando em localhost:8080.'
+          );
+        } else {
+          appendErrorMessage(`Algo deu errado: ${err.message}`);
+        }
+      } finally {
+        chatInput.disabled = false;
+        chatSend.disabled  = false;
+        chatInput.focus();
+      }
+    }
+ 
+    /* ── Eventos de envio ───────────────────────────── */
+    chatSend.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+ 
+  </script>
+
+</body>
+</html>
