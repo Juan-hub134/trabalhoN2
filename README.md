@@ -64,7 +64,7 @@ trabalhoN2/
 
 Uma versão da aplicação está disponível online:
 
-**SmartChef AI:**  https://trabalho-n2-five.vercel.app/](https://trabalho-n2-self.vercel.app)
+**SmartChef AI:**  https://trabalho-n2-self.vercel.app
 
 ##  Contexto acadêmico
 
